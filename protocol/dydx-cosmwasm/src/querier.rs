@@ -1,6 +1,5 @@
 use cosmwasm_std::{QuerierWrapper, StdResult};
-use protobuf::Error;
-use crate::proto_structs::{PerpetualClobDetails};
+use crate::proto_structs::PerpetualClobDetails;
 use crate::query::{DydxQuery, DydxQueryWrapper};
 use crate::route::DydxRoute;
 use crate::{MarketPrice, PerpetualClobDetailsResponse, Subaccount, SubaccountResponse, MarketPriceResponse};

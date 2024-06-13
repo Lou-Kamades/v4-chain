@@ -56,7 +56,7 @@ impl JsonSchema for SerializableInt {
         "SerializableInt".to_string()
     }
 
-    fn json_schema(gen: &mut schemars::gen::SchemaGenerator) -> Schema {
+    fn json_schema(_gen: &mut schemars::gen::SchemaGenerator) -> Schema {
         Schema::Object(SchemaObject {
             instance_type: Some(InstanceType::String.into()),
             format: Some("bigint".to_string()),
