@@ -12,3 +12,4 @@ v4-proto-js/src
 .idea
 .vscode
 **/.DS_Store
+**/target/*
