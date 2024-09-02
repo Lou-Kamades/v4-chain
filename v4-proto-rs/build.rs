@@ -8,9 +8,12 @@ fn main() -> Result<(), tonic_buf_build::error::TonicBufBuildError> {
         config.out_dir("src");
         config.include_file("_includes.rs");
         config.enable_type_names();
-        let mut path = PathBuf::from(
-            env::var("CARGO_MANIFEST_DIR").expect("cargo sets CARGO_MANIFEST_DIR env var"),
-        );
+        let mut path = PathBuf::from(env::var("CARGO_MANIFEST_DIR").map_err(|e| {
+            tonic_buf_build::error::TonicBufBuildError {
+                message: format!("Failed to get CARGO_MANIFEST_DIR: {}", e),
+                cause: None,
+            }
+        })?);
         path.pop();
         tonic_buf_build::compile_from_buf_workspace_with_config(
             tonic_build::configure().build_server(false),

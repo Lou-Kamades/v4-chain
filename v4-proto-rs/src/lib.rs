@@ -7,6 +7,7 @@ use prost::Name;
 use prost_types;
 
 pub trait ToAny: Name + Sized {
+    /// Converts the type to `prost_types::Any`.
     fn to_any(self) -> prost_types::Any {
         let value = self.encode_to_vec();
         let type_url = Self::type_url();
