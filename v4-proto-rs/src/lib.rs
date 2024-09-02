@@ -24,6 +24,7 @@ mod test {
 
     #[test]
     pub fn test_any_conversion() {
+        /// Tests the conversion of `MsgCancelOrder` to `prost_types::Any`.
         let msg = MsgCancelOrder {
             order_id: None,
             good_til_oneof: None,
@@ -35,6 +36,7 @@ mod test {
 
     #[test]
     pub fn test_any_conversion_wrapped() {
+        /// Tests the conversion of `MsgSend` to `prost_types::Any`.
         let msg = MsgSend::default();
         let any = msg.to_any();
         let url = "/cosmos.bank.v1beta1.MsgSend";
