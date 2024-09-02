@@ -21,6 +21,7 @@ For more idiomatic Rust you can use conversions (`try_into` and `into`) for the 
 1) [Rust](https://www.rust-lang.org/tools/install)
 2) [Buf](https://github.com/bufbuild/buf?tab=readme-ov-file#installation) - to resolve 3rd-party dependencies for protobuf files
 3) [protoc](https://github.com/protocolbuffers/protobuf#protobuf-compiler-installation) - to compile protobuf files with their 3rd-party dependencies
+4) [cargo deny](https://github.com/EmbarkStudios/cargo-deny) - to check for security/license/sources issues
 
 Then for a code (re-)generation run
 
@@ -33,6 +34,7 @@ Before publishing make sure to run (and fix all warnings and errors)
 ```sh
 cargo fmt
 cargo clippy
+cargo deny check licenses advisories sources
 ```
 
 ## Q&A
